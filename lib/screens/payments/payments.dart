@@ -17,8 +17,6 @@ class _PaymentsState extends State<Payments> {
   TextEditingController amountController = TextEditingController();
 
   String? selectedHead;
-  String amount = "";
-  String head = "";
   List<Map<String, dynamic>> listItems = [];
 
 
@@ -48,8 +46,10 @@ class _PaymentsState extends State<Payments> {
             child: const Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                Text("Head", style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold, fontFamily: appFontFamily,)),
-                Text("Amount", style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold, fontFamily: appFontFamily)),
+                Text("Head", style: TextStyle(fontSize: 18.0,
+                  fontWeight: FontWeight.bold, fontFamily: appFontFamily,)),
+                Text("Amount", style: TextStyle(fontSize: 18.0,
+                    fontWeight: FontWeight.bold, fontFamily: appFontFamily)),
               ],
             ),
           ),
@@ -69,9 +69,11 @@ class _PaymentsState extends State<Payments> {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     Text(itemData['head'],
-                        style: const TextStyle(fontSize: 15.0, fontWeight: FontWeight.bold, fontFamily: appFontFamily)),
+                        style: const TextStyle(fontSize: 15.0,
+                            fontWeight: FontWeight.bold, fontFamily: appFontFamily)),
                     Text(itemData['amount'],
-                        style: const TextStyle(fontSize: 15.0, fontWeight: FontWeight.bold, fontFamily: appFontFamily)),
+                        style: const TextStyle(fontSize: 15.0,
+                            fontWeight: FontWeight.bold, fontFamily: appFontFamily)),
                   ],
                 ),
               );
@@ -91,7 +93,8 @@ class _PaymentsState extends State<Payments> {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             Text("Total: ${totalPrice.toString()}",
-                style: const TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold, fontFamily: appFontFamily)),
+                style: const TextStyle(fontSize: 20.0,
+                    fontWeight: FontWeight.bold, fontFamily: appFontFamily)),
             CustomButton(
                 onPressed: (){
                   Navigator.push(context,
@@ -99,7 +102,8 @@ class _PaymentsState extends State<Payments> {
                 },
                 padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
                 child: const Text("Pay Now",
-                  style: TextStyle(color: Colors.white,fontSize: 20.0, fontWeight: FontWeight.bold, fontFamily: appFontFamily),)
+                  style: TextStyle(color: Colors.white,fontSize: 20.0,
+                      fontWeight: FontWeight.bold, fontFamily: appFontFamily),)
             ),
           ],
         ),
@@ -113,7 +117,8 @@ class _PaymentsState extends State<Payments> {
       context: context,
       builder: (context) {
         return AlertDialog(
-          title: const Center(child: Text('Add Payment', style: TextStyle(fontFamily: appFontFamily),)),
+          title: const Center(child: Text('Add Payment',
+            style: TextStyle(fontFamily: appFontFamily),)),
           content: SingleChildScrollView(
             child: Form(
               key: formKey,

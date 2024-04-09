@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../styles/colors.dart';
+import 'collection.dart';
 import 'contactus.dart';
 import 'history.dart';
 import 'payments/paymentoptions.dart';
@@ -15,13 +16,6 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  int _selectedIndex = 0;
-
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
 
   List<Color> color = const [
     Color(0xFFCC8196),
@@ -29,13 +23,15 @@ class _HomeScreenState extends State<HomeScreen> {
     Color(0xFF5DCAF4),
     Color(0xFFF28B82),
     Color(0xFFD7AEFC),
+    Color(0xFF51829B),
   ];
   List<Icon> icons = const [
     Icon(Icons.account_circle),
-    Icon(Icons.payments),
+    Icon(Icons.money),
     Icon(Icons.history),
     Icon(Icons.contact_support),
     Icon(Icons.monetization_on),
+    Icon(Icons.payments)
   ];
 
   List<String> texts = [
@@ -43,7 +39,8 @@ class _HomeScreenState extends State<HomeScreen> {
     "Payments",
     "History",
     "Contact Us",
-    "Membership Fee"
+    "Membership Fee",
+    "Collections"
   ];
 
   List<Widget> screens = const [
@@ -51,7 +48,8 @@ class _HomeScreenState extends State<HomeScreen> {
     Payments(),
     History(),
     ContactUs(),
-    SelectPayment()
+    SelectPayment(),
+    Collections(),
   ];
 
 
@@ -85,7 +83,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 crossAxisSpacing: 5.0,
                 childAspectRatio: 1.0,
               ),
-              itemCount: color.length, // Ensure itemCount is specified
+              itemCount: color.length,
               itemBuilder: (context, index) {
                 return Padding(
                   padding: const EdgeInsets.all(4.0),
